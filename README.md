@@ -311,6 +311,79 @@ The Economic Stress Score is a derived index that incorporates several indicator
 
 ---
 
+## Future Enhancements
+
+The current project provides a comprehensive framework for monitoring and analyzing economic stress across countries. Future enhancements could further improve analytical depth and decision-making capabilities.
+
+### Time-Series Forecasting
+
+Develop forecasting models to predict future Economic Stress Scores using historical trends and lagged economic indicators. This would enable proactive identification of emerging economic risks.
+
+### Advanced Statistical Analysis
+
+Incorporate hypothesis testing and statistical significance analysis to validate relationships between economic stress and key macroeconomic and food security indicators.
+
+### Feature Engineering
+
+Create advanced features such as:
+
+- Inflation Volatility
+- GDP Growth Trends
+- Rolling Economic Indicators
+- Multi-Year Moving Averages
+- Economic Momentum Metrics
+
+to improve predictive performance and analytical insights.
+
+### Geospatial Analytics
+
+Integrate advanced geographic analysis through:
+
+- Interactive Choropleth Maps
+- Regional Hotspot Identification
+- Spatial Clustering
+- Geographic Risk Assessment
+
+to better understand regional patterns of economic vulnerability.
+
+### Dashboard Deployment
+
+Publish the dashboard using Power BI Service to enable:
+
+- Real-time stakeholder access
+- Interactive reporting
+- Scheduled data refreshes
+- Web-based dashboard sharing
+
+### Automated Data Pipeline
+
+Develop an automated ETL process to periodically retrieve and update data from World Bank and FAOSTAT sources, ensuring continuous monitoring of economic stress indicators.
+
+### Expanded Economic Indicators
+
+Enhance the analytical framework by incorporating additional indicators such as:
+
+- Government Debt
+- Fiscal Balance
+- Foreign Direct Investment
+- Trade Balance
+- Exchange Rate Stability
+- Poverty Rates
+
+to create a more comprehensive economic stress assessment model.
+
+### Early Warning System
+
+Implement an economic risk monitoring framework capable of identifying countries at risk of entering higher stress categories based on changes in key economic and food security indicators.
+
+### Scenario Analysis
+
+Develop simulation models to evaluate the potential impact of changes in inflation, unemployment, GDP growth, and food security conditions on future economic stress levels.
+
+### Cloud-Based Analytics Platform
+
+Extend the solution into a cloud-based analytics platform using services such as Azure, AWS, or Google Cloud to support scalability, automation, and enterprise-level reporting capabilities.
+
 ## Author
 
 Sakshi Nandgude
