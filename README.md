@@ -1,76 +1,127 @@
 # Country-Level Economic Stress Monitoring and Predictive Analytics System
 
-## Project Overview
+> End-to-end analytics project that analyzes global economic vulnerability using macroeconomic and food security indicators to identify high-stress countries, uncover key drivers of economic stress, segment countries into meaningful groups, and support data-driven decision-making.
 
-This project analyzes global economic stress patterns using macroeconomic, demographic, and food security indicators sourced from the World Bank and FAOSTAT.
+## Problem Statement
 
-The objective is to identify countries experiencing elevated economic stress, understand the factors driving economic vulnerability, segment countries into meaningful economic groups, and evaluate whether Economic Stress Scores can be estimated using economic and agricultural indicators.
+Economic stress is influenced by multiple interconnected factors including inflation, unemployment, economic growth, income levels, and food security conditions. Governments, development organizations, and policy makers require reliable methods to identify economically vulnerable countries and understand the factors contributing to economic stress.
 
-The project follows an end-to-end analytics lifecycle including business analysis, data quality assessment, exploratory data analysis, machine learning, dashboard design, and business recommendations.
-
----
-
-## Business Problem
-
-Economic stress is influenced by multiple interconnected factors including inflation, unemployment, economic growth, income levels, and food security conditions.
-
-The primary analytical question addressed in this project is:
+This project addresses the following business question:
 
 **Which countries exhibit higher levels of economic stress based on inflation, GDP growth, unemployment, income level, population characteristics, and food and agricultural indicators?**
 
----
+## Approach
 
-## Project Objectives
+### 1. Data Sourcing and Integration
 
-* Identify countries with the highest economic stress levels.
-* Analyze economic stress across regions and income groups.
-* Investigate relationships among inflation, GDP growth, and unemployment.
-* Evaluate the impact of food security indicators on economic stress.
-* Segment countries into meaningful economic profiles.
-* Develop a machine learning model to estimate Economic Stress Scores.
-* Design an interactive Power BI dashboard for economic stress monitoring.
+Data was collected from:
 
----
+* World Bank
 
-## Dataset Information
+  * GDP Growth
+  * Inflation
+  * Unemployment
+  * GDP Per Capita
+  * Population
+  * Food Production Index
+  * Region and Income Group
 
-### Data Sources
+* FAOSTAT
 
-#### World Bank
+  * Cereal Yield
+  * Cereal Production
+  * Agricultural Land Percentage
+  * Dietary Energy Supply Adequacy
 
-* GDP Growth
-* Inflation
-* Unemployment
-* GDP Per Capita
-* Population
-* Food Production Index
-* Region
-* Income Group
+### 2. Data Understanding and Quality Assessment
 
-#### FAOSTAT
+* Data Profiling
+* Missing Value Analysis
+* Duplicate Validation
+* Primary Key Validation
+* Range Validation
+* Outlier Assessment
 
-* Cereal Yield
-* Cereal Production
-* Agricultural Land Percentage
-* Dietary Energy Supply Adequacy
+### 3. Exploratory Data Analysis
 
-### Dataset Files
+* Economic Stress Distribution
+* Country-Level Stress Rankings
+* Regional Analysis
+* Income Group Analysis
+* Inflation, GDP Growth, and Unemployment Analysis
+* Food Security Analysis
+* Economic Stress Driver Analysis
 
-| File                        | Description                                 |
-| --------------------------- | ------------------------------------------- |
-| country_year_indicators.csv | Primary analytical dataset                  |
-| country_metadata.csv        | Country metadata and geospatial information |
-| economic_stress_score.csv   | Economic stress score components            |
-| indicator_dictionary.csv    | Data dictionary and metadata                |
+### 4. Country Segmentation
 
----
+K-Means Clustering was used to group countries with similar economic and agricultural characteristics.
 
-## Repository Structure
+Clusters identified:
+
+* Economically Vulnerable Countries
+* Economically Stable High-Income Countries
+* Emerging Growth Economies
+* Economic Crisis Economies
+
+### 5. Predictive Analytics
+
+A Random Forest Regression model was developed to estimate Economic Stress Scores using macroeconomic and food security indicators.
+
+### 6. Dashboard Design
+
+A Power BI dashboard framework was designed to support:
+
+* Economic Stress Monitoring
+* Regional Comparisons
+* Food Security Analysis
+* Country Clustering
+* Predictive Analytics Insights
+
+## Results
+
+### Model Performance
+
+* R² Score: 0.89
+* MAE: 3.74
+* RMSE: 5.40
+
+### Highest Economic Stress Countries (2020–2025)
+
+* Haiti
+* Sudan
+* Yemen
+* Somalia
+* Syrian Arab Republic
+* Lebanon
+* Eswatini
+* Angola
+* Sao Tome and Principe
+
+### Key Business Insights
+
+* Sub-Saharan Africa recorded the highest average Economic Stress Score (58.02).
+* Low-income countries exhibited significantly higher economic stress than high-income economies.
+* Unemployment was identified as the strongest positive driver of economic stress.
+* GDP Growth, GDP Per Capita, Dietary Energy Supply Adequacy, and Cereal Yield were associated with lower economic stress.
+* Food security indicators demonstrated a meaningful relationship with economic resilience.
+
+## Tech Stack
+
+| Layer                 | Tools               |
+| --------------------- | ------------------- |
+| Language              | Python 3.x          |
+| Data Processing       | Pandas, NumPy       |
+| Data Visualization    | Matplotlib, Seaborn |
+| Machine Learning      | Scikit-Learn        |
+| Business Intelligence | Power BI            |
+| Environment           | Jupyter Notebook    |
+| Version Control       | Git, GitHub         |
+
+## Project Structure
 
 ```text
 country-economic-stress-analysis/
 
-│
 ├── data/
 │   ├── country_metadata.csv
 │   ├── country_year_indicators.csv
@@ -99,297 +150,52 @@ country-economic-stress-analysis/
 │   └── Economic_Stress_Dashboard.pbix
 │
 ├── validation_report.json
-├── .gitignore
 ├── LICENSE
+├── .gitignore
 └── README.md
 ```
 
----
+## How to Run
 
-## Methodology
+```bash
+git clone https://github.com/sakshi-nandgude/country-economic-stress-analysis.git
 
-### Phase 1: Business Analysis
+cd country-economic-stress-analysis
 
-* Project Charter
-* Business Requirements Document (BRD)
-* Data Dictionary
-* Metadata Documentation
+pip install pandas numpy matplotlib seaborn scikit-learn jupyter
 
-### Phase 2: Data Understanding & Data Quality Assessment
+jupyter notebook
+```
 
-* Dataset Exploration
-* Data Profiling
-* Missing Value Analysis
-* Duplicate Validation
-* Range Validation
-* Outlier Assessment
+Open notebooks in the following order:
 
-### Phase 3: Exploratory Data Analysis
+```text
+01_data_understanding.ipynb
 
-* Economic Stress Distribution
-* Country Rankings
-* Regional Analysis
-* Income Group Analysis
-* Inflation, GDP Growth and Unemployment Analysis
-* Food Security Analysis
-* Economic Stress Driver Analysis
+02_data_quality_assessment.ipynb
 
-### Phase 4: Country Clustering
+03_data_preparation.ipynb
 
-* Missing Value Treatment
-* Feature Scaling
-* K-Means Clustering
-* Cluster Profiling
-* Country Segmentation
+04_exploratory_data_analysis.ipynb
 
-### Phase 5: Predictive Analytics
+05_country_clustering.ipynb
 
-* Random Forest Regression
-* Model Evaluation
-* Feature Importance Analysis
-
-### Phase 6: Dashboard Design
-
-* KPI Framework
-* Dashboard Requirements
-* Power BI Dashboard
-
----
+06_predictive_analytics.ipynb
+```
 
 ## Key Findings
 
-### Highest Economic Stress Countries (2020–2025)
+1. Haiti, Sudan, Yemen, Somalia, and Syria exhibited the highest levels of economic stress during the 2020–2025 period.
 
-* Haiti
-* Sudan
-* Yemen
-* Somalia
-* Syrian Arab Republic
-* Lebanon
-* Eswatini
-* Angola
-* Sao Tome and Principe
+2. Sub-Saharan Africa recorded the highest average Economic Stress Score (58.02), while North America recorded the lowest (35.59).
 
-### Regional Insights
+3. Unemployment showed the strongest positive relationship with Economic Stress Score (0.53), indicating that labor market conditions are a major contributor to economic vulnerability.
 
-**Highest Stress Region:** Sub-Saharan Africa (58.02)
+4. GDP Growth (-0.40), Dietary Energy Supply Adequacy (-0.39), GDP Per Capita (-0.37), and Cereal Yield (-0.36) demonstrated meaningful negative relationships with economic stress.
 
-**Lowest Stress Region:** North America (35.59)
-
-### Income Group Insights
-
-* Low-income countries exhibited the highest economic stress.
-* High-income countries exhibited the lowest economic stress.
-
-### Strongest Drivers of Economic Stress
-
-| Indicator                      | Relationship with Stress |
-| ------------------------------ | ------------------------ |
-| Unemployment                   | Strong Positive          |
-| GDP Growth                     | Moderate Negative        |
-| GDP Per Capita                 | Moderate Negative        |
-| Dietary Energy Supply Adequacy | Moderate Negative        |
-| Cereal Yield                   | Moderate Negative        |
-
-### Food Security Insights
-
-Countries with stronger food security and agricultural productivity generally exhibited lower levels of economic stress.
+5. Country clustering identified four distinct economic profiles, including a crisis cluster consisting of Lebanon, Sudan, and Zimbabwe.
 
 ---
 
-## Country Clustering Results
-
-Four country segments were identified.
-
-### Cluster 0 – Economically Vulnerable Countries
-
-* High unemployment
-* Lower GDP growth
-* Lower income levels
-
-### Cluster 1 – Economically Stable High-Income Countries
-
-* High GDP per capita
-* Low unemployment
-* Strong food security
-
-### Cluster 2 – Emerging Growth Economies
-
-* Strong GDP growth
-* Low unemployment
-* Strong agricultural performance
-
-### Cluster 3 – Economic Crisis Economies
-
-Representative countries:
-
-* Lebanon
-* Sudan
-* Zimbabwe
-
----
-
-## Predictive Analytics Results
-
-### Model
-
-Random Forest Regressor
-
-### Performance
-
-| Metric   | Value |
-| -------- | ----: |
-| R² Score |  0.89 |
-| MAE      |  3.74 |
-| RMSE     |  5.40 |
-
-### Most Important Predictors
-
-1. GDP Growth
-2. GDP Per Capita
-3. Inflation
-4. Unemployment
-5. Food Production Index
-
----
-
-## Dashboard Features
-
-### Executive Overview
-
-* Economic Stress Distribution
-* Country Rankings
-* Stress Category Analysis
-* Global Economic Stress Mapping
-
-### Regional Analysis
-
-* Regional Comparisons
-* Income Group Comparisons
-
-### Economic Drivers
-
-* GDP Growth Analysis
-* Inflation Analysis
-* Unemployment Analysis
-* Correlation Analysis
-
-### Food Security Analysis
-
-* Food Production Analysis
-* Dietary Energy Analysis
-* Agricultural Productivity Analysis
-
-### Country Clustering
-
-* Cluster Profiles
-* Country Segmentation
-* Cluster Membership Analysis
-
-### Predictive Analytics
-
-* Model Performance
-* Feature Importance
-* Actual vs Predicted Results
-
----
-
-## Business Recommendations
-
-* Prioritize employment generation initiatives.
-* Promote sustainable economic growth.
-* Strengthen food security systems.
-* Focus interventions on high-stress regions.
-* Implement economic stress monitoring frameworks.
-* Apply cluster-specific economic development strategies.
-
----
-
-## Project Limitation
-
-The Economic Stress Score is a derived index that incorporates several indicators used as model inputs. Therefore, predictive analytics results should be interpreted as demonstrating explanatory relationships rather than providing a pure forecasting framework.
-
----
-
-## Future Enhancements
-
-The current project provides a comprehensive framework for monitoring and analyzing economic stress across countries. Future enhancements could further improve analytical depth and decision-making capabilities.
-
-### Time-Series Forecasting
-
-Develop forecasting models to predict future Economic Stress Scores using historical trends and lagged economic indicators. This would enable proactive identification of emerging economic risks.
-
-### Advanced Statistical Analysis
-
-Incorporate hypothesis testing and statistical significance analysis to validate relationships between economic stress and key macroeconomic and food security indicators.
-
-### Feature Engineering
-
-Create advanced features such as:
-
-- Inflation Volatility
-- GDP Growth Trends
-- Rolling Economic Indicators
-- Multi-Year Moving Averages
-- Economic Momentum Metrics
-
-to improve predictive performance and analytical insights.
-
-### Geospatial Analytics
-
-Integrate advanced geographic analysis through:
-
-- Interactive Choropleth Maps
-- Regional Hotspot Identification
-- Spatial Clustering
-- Geographic Risk Assessment
-
-to better understand regional patterns of economic vulnerability.
-
-### Dashboard Deployment
-
-Publish the dashboard using Power BI Service to enable:
-
-- Real-time stakeholder access
-- Interactive reporting
-- Scheduled data refreshes
-- Web-based dashboard sharing
-
-### Automated Data Pipeline
-
-Develop an automated ETL process to periodically retrieve and update data from World Bank and FAOSTAT sources, ensuring continuous monitoring of economic stress indicators.
-
-### Expanded Economic Indicators
-
-Enhance the analytical framework by incorporating additional indicators such as:
-
-- Government Debt
-- Fiscal Balance
-- Foreign Direct Investment
-- Trade Balance
-- Exchange Rate Stability
-- Poverty Rates
-
-to create a more comprehensive economic stress assessment model.
-
-### Early Warning System
-
-Implement an economic risk monitoring framework capable of identifying countries at risk of entering higher stress categories based on changes in key economic and food security indicators.
-
-### Scenario Analysis
-
-Develop simulation models to evaluate the potential impact of changes in inflation, unemployment, GDP growth, and food security conditions on future economic stress levels.
-
-### Cloud-Based Analytics Platform
-
-Extend the solution into a cloud-based analytics platform using services such as Azure, AWS, or Google Cloud to support scalability, automation, and enterprise-level reporting capabilities.
-
-## Author
-
-Sakshi Nandgude
-
-University of Limerick
-
-Data Analytics Portfolio Project
-
-2026
+*by Sakshi Nandgude*
+*MSc Business Analytics, University of Limerick*
