@@ -147,7 +147,7 @@ country-economic-stress-analysis/
 │   └── 06_predictive_analytics.ipynb
 │
 ├── dashboard/
-│   └── Economic_Stress_Dashboard.pbix
+│   └── Dashboard.pbix
 │
 ├── validation_report.json
 ├── LICENSE
